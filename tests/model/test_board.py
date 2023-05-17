@@ -1,11 +1,21 @@
 from src.model.board import Board, CellType
 
 
-def test_constructor():
+def test_grid_getter():
     board = Board(2, 2)
 
     expected_grid = [[CellType.WATER, CellType.WATER], [CellType.WATER, CellType.WATER]]
 
-    assert board.get_rows() == 2
-    assert board.get_columns() == 2
-    assert board.get_grid() == expected_grid
+    assert board.grid == expected_grid
+
+
+def test_rows_getter():
+    board = Board(2, 3)
+
+    assert board.rows == 2
+
+
+def test_columns_getter():
+    board = Board(2, 3)
+
+    assert board.columns == 3
