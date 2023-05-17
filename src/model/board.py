@@ -8,11 +8,14 @@ class Board:
         self.__columns = columns
         self.__grid = [[CellType.WATER for _ in range(columns)] for _ in range(rows)]
 
-    def get_rows(self) -> int:
+    @property
+    def rows(self) -> int:
         return self.__rows
 
-    def get_columns(self) -> int:
+    @property
+    def columns(self) -> int:
         return self.__columns
 
-    def get_grid(self) -> list[list[CellType]]:
+    @property
+    def grid(self) -> List[List[CellType]]:
         return self.__grid
