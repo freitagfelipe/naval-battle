@@ -1,4 +1,7 @@
 from typing import Tuple
+from typing import TypeVar
+
+Self = TypeVar("Self", bound="Position")
 
 
 class Position:
@@ -8,3 +11,6 @@ class Position:
 
     def get(self) -> Tuple[int, int]:
         return (self.__x, self.__y)
+
+    def __eq__(self, other: Self) -> bool:
+        return self.__x == other.__x and self.__y == other.__y
