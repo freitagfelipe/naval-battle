@@ -1,3 +1,4 @@
 from termcolor import cprint
 
-cprint("Hello, World", "blue", "on_green")
+if __name__ == "__main__":
+    cprint("Hello, World", "blue", "on_green")
