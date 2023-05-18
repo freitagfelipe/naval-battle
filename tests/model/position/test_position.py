@@ -1,4 +1,4 @@
-from src.model.position import Position
+from src.model.position.position import Position
 
 
 def test_constructor():

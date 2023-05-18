@@ -1,4 +1,4 @@
-from src.model.cell_type import CellType
+from src.model.enums.cell_type import CellType
 from typing import List
 
 

@@ -1,6 +1,6 @@
-from src.model.board import Board
-from src.model.ship import Ship
-from src.model.cell_type import CellType
+from src.model.boards.board import Board
+from src.model.ship.ship import Ship
+from src.model.enums.cell_type import CellType
 from typing import Tuple
 
 

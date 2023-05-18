@@ -1,7 +1,7 @@
 import pytest
-from src.model.ships_board import ShipBoard, InvalidShip, Ship
-from src.model.ship_type import ShipType
-from src.model.position import Position
+from src.model.boards.ships_board import ShipBoard, InvalidShip, Ship
+from src.model.enums.ship_type import ShipType
+from src.model.position.position import Position
 
 def test_set_ship_should_fail_with_initial_x_outside_grid():
     with pytest.raises(InvalidShip, match="O x da posição inicial está fora do tabuleiro"):

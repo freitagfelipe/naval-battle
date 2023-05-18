@@ -1,4 +1,4 @@
-from src.model.board import Board, CellType
+from src.model.boards.board import Board, CellType
 
 
 def test_grid_getter():

@@ -1,5 +1,5 @@
 import pytest
-from src.model.ship import Ship, Position, ShipType, ShipException
+from src.model.ship.ship import Ship, Position, ShipType, ShipException
 
 
 def test_create_submarine_should_fail_with_different_positions():
