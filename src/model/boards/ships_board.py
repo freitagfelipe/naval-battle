@@ -14,11 +14,10 @@ class ShipBoard(Board):
     def __init__(self, rows: int, columns: int):
         super().__init__(rows, columns)
         self.__ships = []
-        
+
     @property
     def ships(self) -> List:
         return self.__ships
-        
 
     def set_ship(self, ship: Ship):
         setted, reason = self.__validate_ship(ship)
@@ -37,7 +36,7 @@ class ShipBoard(Board):
         for x in range(min_x, max_x + 1):
             for y in range(min_y, max_y + 1):
                 self.grid[x][y] = CellType.SHIP
-                
+
         self.__ships.append(ship)
 
     def __validate_ship(self, ship: Ship) -> Tuple[bool, str]:

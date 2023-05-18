@@ -27,44 +27,45 @@ class GuessesBoard(Board):
 
             if self.grid[x][y] == CellType.SHIP:
                 self.grid[x][y] = CellType.HIT
-                
+
                 if self.__was_ship_destroyed(position):
                     return GuessType.DESTROYED
-                
+
                 return GuessType.HIT
             elif self.grid[x][y] == CellType.WATER:
                 self.grid[x][y] = CellType.ERROR
-                
+
                 return GuessType.ERROR
         except GuessesBoardException as error:
             raise error
-        
-        
+
     def __was_ship_destroyed(self, position: Position) -> bool:
         hitted_ship = self.__search_hitted_ship(position)
-        
-        min_x, max_x, min_y, max_y = min_max_position(hitted_ship.initial_pos, hitted_ship.end_pos)
-        
-        hitts_qtdd = 0;
-        
+
+        min_x, max_x, min_y, max_y = min_max_position(
+            hitted_ship.initial_pos, hitted_ship.end_pos
+        )
+
+        hitts_qtdd = 0
+
         for x in range(min_x, max_x + 1):
             for y in range(min_y, max_y + 1):
                 if self.grid[x][y] == CellType.HIT:
                     hitts_qtdd += 1
-                    
+
         if hitts_qtdd == hitted_ship.type.value:
             return True
         else:
             return False
-                
-            
 
     def __search_hitted_ship(self, position: Position) -> Ship:
         hitted_ship = None
-        
-        for ship in self.__enemy_ships:            
-            min_x, max_x, min_y, max_y = min_max_position(ship.initial_pos, ship.end_pos)
-            
+
+        for ship in self.__enemy_ships:
+            min_x, max_x, min_y, max_y = min_max_position(
+                ship.initial_pos, ship.end_pos
+            )
+
             for x in range(min_x, max_x + 1):
                 for y in range(min_y, max_y + 1):
                     if Position(x, y) == position:
@@ -72,10 +73,9 @@ class GuessesBoard(Board):
                         break
                 if hitted_ship != None:
                     break
-            
+
         return hitted_ship
-        
-    
+
     def __validate_position(self, position: Position):
         x, y = position.get()
 

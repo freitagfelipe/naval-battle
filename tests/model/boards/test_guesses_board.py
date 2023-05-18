@@ -17,7 +17,8 @@ def test_make_guess_should_pass():
     guesses_board = GuessesBoard(ships_board)
 
     assert GuessType.HIT == guesses_board.make_guess(Position(0, 2))
-    
+
+
 def test_make_guess_that_destroy_ship():
     ships_board = ShipBoard(10, 10)
 
