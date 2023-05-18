@@ -33,36 +33,46 @@ def test_make_guess_same_position_hited_before_should_fail():
         guesses_board.make_guess(Position(0, 2))
         guesses_board.make_guess(Position(0, 2))
 
+
 def test_make_guess_water_position_should_pass():
     ships_board = ShipBoard(10, 10)
 
     ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
-    
+
     ships_board.set_ship(ship)
-    
+
     guesses_board = GuessesBoard(ships_board)
-    
+
     assert False == guesses_board.make_guess(Position(0, 4))
-    
+
+
 def test_make_guess_with_x_outside_board_should_fail():
-    with pytest.raises(GuessesBoardException, match="A linha do palpite está fora do board"):
+    with pytest.raises(
+        GuessesBoardException, match="A linha do palpite está fora do board"
+    ):
         guesses_board = GuessesBoard(ShipBoard(10, 10))
-        
+
         guesses_board.make_guess(Position(11, 1))
-        
-    with pytest.raises(GuessesBoardException, match="A linha do palpite está fora do board"):
+
+    with pytest.raises(
+        GuessesBoardException, match="A linha do palpite está fora do board"
+    ):
         guesses_board = GuessesBoard(ShipBoard(10, 10))
-        
+
         guesses_board.make_guess(Position(-1, 1))
-        
+
 
 def test_make_guess_with_y_outside_board_should_fail():
-    with pytest.raises(GuessesBoardException, match="A coluna do palpite está fora do board"):
+    with pytest.raises(
+        GuessesBoardException, match="A coluna do palpite está fora do board"
+    ):
         guesses_board = GuessesBoard(ShipBoard(10, 10))
-        
+
         guesses_board.make_guess(Position(1, 12))
-        
-    with pytest.raises(GuessesBoardException, match="A coluna do palpite está fora do board"):
+
+    with pytest.raises(
+        GuessesBoardException, match="A coluna do palpite está fora do board"
+    ):
         guesses_board = GuessesBoard(ShipBoard(10, 10))
-        
+
         guesses_board.make_guess(Position(1, -1))

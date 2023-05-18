@@ -91,7 +91,7 @@ def test_set_a_ship_should_pass():
     ship = Ship(ShipType.BIG_SHIP, Position(5, 5), Position(8, 5))
 
     ship_board.set_ship(ship)
-    
+
     for x in range(5, 9):
         assert CellType.SHIP == ship_board.grid[x][5]
 
