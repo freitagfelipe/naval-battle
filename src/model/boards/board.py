@@ -1,6 +1,8 @@
 from src.model.enums.cell_type import CellType
 from typing import List
+from typing import TypeVar
 
+Self = TypeVar("Self", bound="Board")
 
 class BoardException(Exception):
     def __init__(self, message: str):
@@ -36,3 +38,6 @@ class Board:
     @grid.setter
     def grid(self, grid: List[List[CellType]]):
         self.__grid = grid
+        
+    def __eq__ (self, other: Self) -> bool:
+        return self.grid == other.grid
