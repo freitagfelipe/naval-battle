@@ -20,6 +20,7 @@ def test_equal_positions_equality():
 
     assert position_one == position_two
 
+
 def test_different_positions_equality():
     x_one = 10
     y_one = 5

@@ -15,7 +15,7 @@ class ShipBoard(Board):
 
     def set_ship(self, ship: Ship):
         setted, reason = self.__validate_ship(ship)
-        
+
         if not setted:
             raise InvalidShip(reason)
 
@@ -34,7 +34,6 @@ class ShipBoard(Board):
             for y in range(min_y, max_y + 1):
                 print(f"{x} {y}")
                 self.grid[x][y] = CellType.SHIP
-
 
     def __validate_ship(self, ship: Ship) -> Tuple[bool, str]:
         ship_initial_pos = ship.initial_pos.get()
@@ -58,5 +57,5 @@ class ShipBoard(Board):
             for y in range(min_y, max_y + 1):
                 if self.grid[x][y] == CellType.SHIP:
                     raise InvalidShip("A posição já está ocupada")
-                
+
         return (True, None)

@@ -113,6 +113,7 @@ def test_create_big_ship_should_pass():
 
     Ship(type, initial_pos, end_pos)
 
+
 def test_check_type_getter():
     type = ShipType.BIG_SHIP
     initial_pos = Position(10, 5)
@@ -122,6 +123,7 @@ def test_check_type_getter():
 
     assert ship.type == type
 
+
 def test_check_initial_pos_getter():
     type = ShipType.BIG_SHIP
     initial_pos = Position(10, 5)
@@ -130,6 +132,7 @@ def test_check_initial_pos_getter():
     ship = Ship(type, initial_pos, end_pos)
 
     assert ship.initial_pos == initial_pos
+
 
 def test_check_end_pos_getter():
     type = ShipType.BIG_SHIP
