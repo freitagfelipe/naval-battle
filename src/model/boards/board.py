@@ -1,9 +1,16 @@
 from src.model.enums.cell_type import CellType
 from typing import List
 
+class BoardException(Exception):
+    def __init__(self, message: str):
+        super().__init__(message)
 
 class Board:
     def __init__(self, rows: int, columns: int):
+        if rows <= 0:
+            raise BoardException("O board não pode ser criado com um número negativo de linhas")
+        elif columns <= 0:
+            raise BoardException("O board não pode ser criado com um número negativo de colunas")
         self.__rows = rows
         self.__columns = columns
         self.__grid = [[CellType.WATER for _ in range(columns)] for _ in range(rows)]
