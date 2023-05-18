@@ -26,3 +26,7 @@ class Board:
     @property
     def grid(self) -> List[List[CellType]]:
         return self.__grid
+
+    @grid.setter
+    def grid(self, grid: List[List[CellType]]):
+        self.__grid = grid
