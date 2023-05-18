@@ -1,6 +1,7 @@
 from src.model.boards.board import Board
 from src.model.ship.ship import Ship
 from src.model.enums.cell_type import CellType
+from src.util.min_max_position import min_max_position
 from typing import List
 from typing import Tuple
 
@@ -24,14 +25,8 @@ class ShipBoard(Board):
 
         if not setted:
             raise InvalidShip(reason)
-
-        ship_initial_pos = ship.initial_pos.get()
-        ship_end_pos = ship.end_pos.get()
-
-        min_x = min(ship_initial_pos[0], ship_end_pos[0])
-        max_x = max(ship_initial_pos[0], ship_end_pos[0])
-        min_y = min(ship_initial_pos[1], ship_end_pos[1])
-        max_y = max(ship_initial_pos[1], ship_end_pos[1])
+        
+        min_x, max_x, min_y, max_y = min_max_position(ship.initial_pos, ship.end_pos)
 
         for x in range(min_x, max_x + 1):
             for y in range(min_y, max_y + 1):
