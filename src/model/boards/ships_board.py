@@ -27,12 +27,8 @@ class ShipBoard(Board):
         min_y = min(ship_initial_pos[1], ship_end_pos[1])
         max_y = max(ship_initial_pos[1], ship_end_pos[1])
 
-        print(f"Min_x: {min_x}, Max_x: {max_x}")
-        print(f"Min_y: {min_y}, Max_y: {max_y}")
-
         for x in range(min_x, max_x + 1):
             for y in range(min_y, max_y + 1):
-                print(f"{x} {y}")
                 self.grid[x][y] = CellType.SHIP
 
     def __validate_ship(self, ship: Ship) -> Tuple[bool, str]:
