@@ -4,6 +4,7 @@ from src.model.boards.ships_board import ShipBoard
 from src.model.enums.ship_type import ShipType
 from src.model.position.position import Position
 from src.model.ship.ship import Ship
+from src.model.enums.guess_type import GuessType
 
 
 def test_make_guess_should_pass():
@@ -15,7 +16,18 @@ def test_make_guess_should_pass():
 
     guesses_board = GuessesBoard(ships_board)
 
-    assert True == guesses_board.make_guess(Position(0, 2))
+    assert GuessType.HIT == guesses_board.make_guess(Position(0, 2))
+    
+def test_make_guess_that_destroy_ship():
+    ships_board = ShipBoard(10, 10)
+
+    ship = Ship(ShipType.SUBMARINE, Position(0, 2), Position(0, 2))
+
+    ships_board.set_ship(ship)
+
+    guesses_board = GuessesBoard(ships_board)
+
+    assert GuessType.DESTROYED == guesses_board.make_guess(Position(0, 2))
 
 
 def test_make_guess_same_position_hited_before_should_fail():
@@ -43,7 +55,7 @@ def test_make_guess_water_position_should_pass():
 
     guesses_board = GuessesBoard(ships_board)
 
-    assert False == guesses_board.make_guess(Position(0, 4))
+    assert GuessType.ERROR == guesses_board.make_guess(Position(0, 4))
 
 
 def test_make_guess_with_x_outside_board_should_fail():
