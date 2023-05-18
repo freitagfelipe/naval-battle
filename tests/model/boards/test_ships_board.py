@@ -2,6 +2,7 @@ import pytest
 from src.model.boards.ships_board import ShipBoard, InvalidShip, Ship
 from src.model.enums.ship_type import ShipType
 from src.model.position.position import Position
+from src.model.enums.cell_type import CellType
 
 
 def test_set_ship_should_fail_with_initial_x_outside_grid():
@@ -90,6 +91,9 @@ def test_set_a_ship_should_pass():
     ship = Ship(ShipType.BIG_SHIP, Position(5, 5), Position(8, 5))
 
     ship_board.set_ship(ship)
+    
+    for x in range(5, 9):
+        assert CellType.SHIP == ship_board.grid[x][5]
 
 
 def test_set_a_ship_where_already_has_a_ship_should_fail():
