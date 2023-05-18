@@ -25,7 +25,7 @@ class ShipBoard(Board):
 
         if not setted:
             raise InvalidShip(reason)
-        
+
         min_x, max_x, min_y, max_y = min_max_position(ship.initial_pos, ship.end_pos)
 
         for x in range(min_x, max_x + 1):
