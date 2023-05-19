@@ -1,13 +1,12 @@
-from src.model.boards.ship_board import ShipBoard
 from src.model.boards.guesses_board import GuessesBoard, GuessesBoardException
 from src.model.position.position import Position
 from src.util.enums.guess_type import GuessType
 
 
 class Player:
-    def __init__(self, name: str, guesses_board: ShipBoard):
+    def __init__(self, name: str, guesses_board: GuessesBoard):
         self.__name = name
-        self.__guesses_board = GuessesBoard(guesses_board)
+        self.__guesses_board = guesses_board
         self.__score = 0
         self.__round_score = 0
 
