@@ -5,9 +5,8 @@ from src.model.enums.guess_type import GuessType
 
 
 class Player:
-    def __init__(self, name: str, ships_board: ShipBoard, guesses_board: ShipBoard):
+    def __init__(self, name: str, guesses_board: ShipBoard):
         self.__name = name
-        self.__ships_board = ships_board
         self.__guesses_board = GuessesBoard(guesses_board)
         self.__score = 0
         self.__round_score = 0
@@ -23,10 +22,6 @@ class Player:
     @property
     def round_score(self) -> int:
         return self.__round_score
-
-    @property
-    def ships_board(self) -> ShipBoard:
-        return self.__ships_board
 
     @property
     def guesses_board(self) -> GuessesBoard:
