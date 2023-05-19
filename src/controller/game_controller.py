@@ -15,17 +15,21 @@ class GameController:
 
     def set_player_ship(self, player: CurrentPlayer, ship_dto: ShipDTO):
         ship = Ship(ShipDTO(ship_dto.type, ship_dto.initial_pos, ship_dto.end_pos))
-        
+
         if player == CurrentPlayer.PLAYER_ONE:
             self.__player_one_ship_board.set_ship(ship)
 
             return
-        
+
         self.__player_two_ship_board.set_ship(ship)
 
     def construct_players(self, player_one_name: str, player_two_name: str):
-        self.__player_one = Player(player_one_name, GuessesBoard(self.__player_two_ship_board))
-        self.__player_two = Player(player_two_name, GuessesBoard(self.__player_one_ship_board))
+        self.__player_one = Player(
+            player_one_name, GuessesBoard(self.__player_two_ship_board)
+        )
+        self.__player_two = Player(
+            player_two_name, GuessesBoard(self.__player_one_ship_board)
+        )
 
     def compute_player_guess(self, position: Position) -> GuessType:
         if self.__current_player == CurrentPlayer.PLAYER_ONE:

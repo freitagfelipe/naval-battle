@@ -1,4 +1,10 @@
-from src.controller.game_controller import GameController, Player, Position, GuessType, CurrentPlayer
+from src.controller.game_controller import (
+    GameController,
+    Player,
+    Position,
+    GuessType,
+    CurrentPlayer,
+)
 from src.DTOs.ship_dto import ShipDTO
 from src.model.boards.ship_board import ShipBoard
 from src.model.ship.ship import ShipType
@@ -61,6 +67,7 @@ def test_get_player_score():
     game_controller.compute_player_guess(Position(6, 5)) == GuessType.HIT
 
     assert game_controller.current_player_score == 1
+
 
 def test_get_players_board():
     game_controller = GameController()

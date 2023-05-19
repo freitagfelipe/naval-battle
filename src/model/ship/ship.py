@@ -2,6 +2,7 @@ from src.DTOs.ship_dto import ShipDTO
 from src.model.position.position import Position
 from src.util.enums.ship_type import ShipType
 
+
 class ShipException(Exception):
     def __init__(self, message: str):
         super().__init__(message)
