@@ -1,6 +1,6 @@
 import pytest
 from src.model.player.player import Player
-from src.model.boards.ships_board import ShipBoard
+from src.model.boards.ship_board import ShipBoard
 from src.model.boards.guesses_board import GuessesBoardException
 from src.model.position.position import Position
 from src.util.enums.ship_type import ShipType
@@ -19,22 +19,22 @@ def test_player_make_guess_same_position_hited_before_should_fail():
     with pytest.raises(
         GuessesBoardException, match="A posicão já foi escolhida anteriormente"
     ):
-        enemy_ships_board = ShipBoard(10, 10)
-        enemy_ships_board.set_ship(
+        enemy_ship_board = ShipBoard(10, 10)
+        enemy_ship_board.set_ship(
             Ship(ShipType.SUBMARINE, Position(5, 7), Position(5, 7))
         )
 
-        player = Player("jogador", enemy_ships_board)
+        player = Player("jogador", enemy_ship_board)
 
         player.make_guess(Position(5, 7))
         player.make_guess(Position(5, 7))
 
 
 def test_player_make_guess_in_ship_should_pass():
-    enemy_ships_board = ShipBoard(10, 10)
-    enemy_ships_board.set_ship(Ship(ShipType.SUBMARINE, Position(5, 7), Position(5, 7)))
+    enemy_ship_board = ShipBoard(10, 10)
+    enemy_ship_board.set_ship(Ship(ShipType.SUBMARINE, Position(5, 7), Position(5, 7)))
 
-    player = Player("jogador", enemy_ships_board)
+    player = Player("jogador", enemy_ship_board)
     old_score = player.score
 
     player.make_guess(Position(5, 7))

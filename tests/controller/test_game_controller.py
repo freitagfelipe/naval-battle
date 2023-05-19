@@ -1,5 +1,5 @@
 from src.controller.game_controller import GameController, Player, Position, GuessType
-from src.model.boards.ships_board import ShipBoard
+from src.model.boards.ship_board import ShipBoard
 from src.model.ship.ship import Ship, ShipType
 
 

@@ -1,5 +1,5 @@
 from src.model.boards.board import Board
-from src.model.boards.ships_board import ShipBoard
+from src.model.boards.ship_board import ShipBoard
 from src.model.ship.ship import Ship
 from src.model.position.position import Position
 from src.util.enums.cell_type import CellType
@@ -14,10 +14,10 @@ class GuessesBoardException(Exception):
 
 
 class GuessesBoard(Board):
-    def __init__(self, ships_board: ShipBoard):
-        super().__init__(ships_board.rows, ships_board.columns)
-        self.grid = copy.deepcopy(ships_board.grid)
-        self.__enemy_ships = ships_board.ships
+    def __init__(self, ship_board: ShipBoard):
+        super().__init__(ship_board.rows, ship_board.columns)
+        self.grid = copy.deepcopy(ship_board.grid)
+        self.__enemy_ships = ship_board.ships
 
     def make_guess(self, position: Position) -> GuessType:
         x, y = position.get()

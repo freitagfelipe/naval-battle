@@ -1,5 +1,5 @@
 import pytest
-from src.model.boards.ships_board import ShipBoard, InvalidShip, Ship
+from src.model.boards.ship_board import ShipBoard, InvalidShip, Ship
 from src.util.enums.ship_type import ShipType
 from src.model.position.position import Position
 from src.util.enums.cell_type import CellType

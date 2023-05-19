@@ -1,6 +1,6 @@
 import pytest
 from src.model.boards.guesses_board import GuessesBoard, GuessesBoardException
-from src.model.boards.ships_board import ShipBoard
+from src.model.boards.ship_board import ShipBoard
 from src.util.enums.ship_type import ShipType
 from src.model.position.position import Position
 from src.model.ship.ship import Ship
@@ -8,25 +8,25 @@ from src.util.enums.guess_type import GuessType
 
 
 def test_make_guess_should_pass():
-    ships_board = ShipBoard(10, 10)
+    ship_board = ShipBoard(10, 10)
 
     ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
 
-    ships_board.set_ship(ship)
+    ship_board.set_ship(ship)
 
-    guesses_board = GuessesBoard(ships_board)
+    guesses_board = GuessesBoard(ship_board)
 
     assert GuessType.HIT == guesses_board.make_guess(Position(0, 2))
 
 
 def test_make_guess_that_destroy_ship():
-    ships_board = ShipBoard(10, 10)
+    ship_board = ShipBoard(10, 10)
 
     ship = Ship(ShipType.SUBMARINE, Position(0, 2), Position(0, 2))
 
-    ships_board.set_ship(ship)
+    ship_board.set_ship(ship)
 
-    guesses_board = GuessesBoard(ships_board)
+    guesses_board = GuessesBoard(ship_board)
 
     assert GuessType.DESTROYED == guesses_board.make_guess(Position(0, 2))
 
@@ -35,26 +35,26 @@ def test_make_guess_same_position_hited_before_should_fail():
     with pytest.raises(
         GuessesBoardException, match="A posicão já foi escolhida anteriormente"
     ):
-        ships_board = ShipBoard(10, 10)
+        ship_board = ShipBoard(10, 10)
 
         ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
 
-        ships_board.set_ship(ship)
+        ship_board.set_ship(ship)
 
-        guesses_board = GuessesBoard(ships_board)
+        guesses_board = GuessesBoard(ship_board)
 
         guesses_board.make_guess(Position(0, 2))
         guesses_board.make_guess(Position(0, 2))
 
 
 def test_make_guess_water_position_should_pass():
-    ships_board = ShipBoard(10, 10)
+    ship_board = ShipBoard(10, 10)
 
     ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
 
-    ships_board.set_ship(ship)
+    ship_board.set_ship(ship)
 
-    guesses_board = GuessesBoard(ships_board)
+    guesses_board = GuessesBoard(ship_board)
 
     assert GuessType.ERROR == guesses_board.make_guess(Position(0, 4))
 
