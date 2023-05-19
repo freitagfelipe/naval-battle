@@ -14,7 +14,7 @@ class GameController:
         self.__player_two_ship_board = ShipBoard(10, 10)
 
     def set_player_ship(self, player: CurrentPlayer, ship_dto: ShipDTO):
-        ship = Ship(ship_dto.type, ship_dto.initial_pos, ship_dto.end_pos)
+        ship = Ship(ShipDTO(ship_dto.type, ship_dto.initial_pos, ship_dto.end_pos))
         
         if player == CurrentPlayer.PLAYER_ONE:
             self.__player_one_ship_board.set_ship(ship)
@@ -24,8 +24,6 @@ class GameController:
         self.__player_two_ship_board.set_ship(ship)
 
     def construct_players(self, player_one_name: str, player_two_name: str):
-        print(f"Aqui: {self.__player_two_ship_board.ships}")
-
         self.__player_one = Player(player_one_name, GuessesBoard(self.__player_two_ship_board))
         self.__player_two = Player(player_two_name, GuessesBoard(self.__player_one_ship_board))
 

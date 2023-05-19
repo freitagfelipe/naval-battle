@@ -1,6 +1,6 @@
+from src.DTOs.ship_dto import ShipDTO
 from src.model.position.position import Position
 from src.util.enums.ship_type import ShipType
-
 
 class ShipException(Exception):
     def __init__(self, message: str):
@@ -8,7 +8,11 @@ class ShipException(Exception):
 
 
 class Ship:
-    def __init__(self, type: ShipType, initial_pos: Position, end_pos: Position):
+    def __init__(self, ship_dto: ShipDTO):
+        type = ship_dto.type
+        initial_pos = ship_dto.initial_pos
+        end_pos = ship_dto.end_pos
+
         Ship.__check_ship(type, initial_pos, end_pos)
         self.__type = type
         self.__initial_pos = initial_pos
