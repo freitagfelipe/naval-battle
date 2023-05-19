@@ -1,5 +1,5 @@
-from src.model.position.position import Position
-from src.util.min_max_position import min_max_position
+from naval_battle.model.position.position import Position
+from naval_battle.util.min_max_position import min_max_position
 
 
 def test_min_max_position_with_same_position():

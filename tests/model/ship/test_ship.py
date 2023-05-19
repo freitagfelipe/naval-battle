@@ -1,6 +1,6 @@
 import pytest
-from src.model.ship.ship import Ship, Position, ShipType, ShipException
-from src.DTOs.ship_dto import ShipDTO
+from naval_battle.model.ship.ship import Ship, Position, ShipType, ShipException
+from naval_battle.DTOs.ship_dto import ShipDTO
 
 
 def test_create_submarine_should_fail_with_different_positions():

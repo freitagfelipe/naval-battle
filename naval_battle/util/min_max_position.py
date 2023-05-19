@@ -1,5 +1,5 @@
 from typing import Tuple
-from src.model.position.position import Position
+from naval_battle.model.position.position import Position
 
 
 def min_max_position(

@@ -1,5 +1,5 @@
-from src.util.enums.ship_type import ShipType
-from src.model.position.position import Position
+from naval_battle.util.enums.ship_type import ShipType
+from naval_battle.model.position.position import Position
 
 
 class ShipDTO:

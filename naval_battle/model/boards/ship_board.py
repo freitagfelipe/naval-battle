@@ -1,7 +1,7 @@
-from src.model.boards.board import Board
-from src.model.ship.ship import Ship
-from src.util.enums.cell_type import CellType
-from src.util.min_max_position import min_max_position
+from naval_battle.model.boards.board import Board
+from naval_battle.model.ship.ship import Ship
+from naval_battle.util.enums.cell_type import CellType
+from naval_battle.util.min_max_position import min_max_position
 from typing import List
 from typing import Tuple
 

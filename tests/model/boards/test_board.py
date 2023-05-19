@@ -1,4 +1,4 @@
-from src.model.boards.board import Board, CellType, BoardException
+from naval_battle.model.boards.board import Board, CellType, BoardException
 import pytest
 
 

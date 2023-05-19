@@ -1,6 +1,6 @@
-from src.model.boards.guesses_board import GuessesBoard, GuessesBoardException
-from src.model.position.position import Position
-from src.util.enums.guess_type import GuessType
+from naval_battle.model.boards.guesses_board import GuessesBoard, GuessesBoardException
+from naval_battle.model.position.position import Position
+from naval_battle.util.enums.guess_type import GuessType
 
 
 class Player:

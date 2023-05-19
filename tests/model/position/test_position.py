@@ -1,4 +1,4 @@
-from src.model.position.position import Position
+from naval_battle.model.position.position import Position
 
 
 def test_constructor():

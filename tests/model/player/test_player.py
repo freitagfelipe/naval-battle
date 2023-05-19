@@ -1,11 +1,11 @@
 import pytest
-from src.model.player.player import Player
-from src.model.boards.ship_board import ShipBoard
-from src.model.boards.guesses_board import GuessesBoardException, GuessesBoard
-from src.model.position.position import Position
-from src.util.enums.ship_type import ShipType
-from src.model.ship.ship import Ship
-from src.DTOs.ship_dto import ShipDTO
+from naval_battle.model.player.player import Player
+from naval_battle.model.boards.ship_board import ShipBoard
+from naval_battle.model.boards.guesses_board import GuessesBoardException, GuessesBoard
+from naval_battle.model.position.position import Position
+from naval_battle.util.enums.ship_type import ShipType
+from naval_battle.model.ship.ship import Ship
+from naval_battle.DTOs.ship_dto import ShipDTO
 
 
 def test_player_make_guess_in_water_should_pass():

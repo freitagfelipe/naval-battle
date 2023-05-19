@@ -1,10 +1,10 @@
-from src.model.boards.board import Board
-from src.model.boards.ship_board import ShipBoard
-from src.model.ship.ship import Ship
-from src.model.position.position import Position
-from src.util.enums.cell_type import CellType
-from src.util.enums.guess_type import GuessType
-from src.util.min_max_position import min_max_position
+from naval_battle.model.boards.board import Board
+from naval_battle.model.boards.ship_board import ShipBoard
+from naval_battle.model.ship.ship import Ship
+from naval_battle.model.position.position import Position
+from naval_battle.util.enums.cell_type import CellType
+from naval_battle.util.enums.guess_type import GuessType
+from naval_battle.util.min_max_position import min_max_position
 import copy
 
 

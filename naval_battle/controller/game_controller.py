@@ -1,9 +1,9 @@
-from src.model.player.player import Player
-from src.model.position.position import Position
-from src.util.enums.current_player import CurrentPlayer
-from src.model.boards.ship_board import ShipBoard, Ship
-from src.model.boards.guesses_board import GuessesBoard, GuessType
-from src.DTOs.ship_dto import ShipDTO
+from naval_battle.model.player.player import Player
+from naval_battle.model.position.position import Position
+from naval_battle.util.enums.current_player import CurrentPlayer
+from naval_battle.model.boards.ship_board import ShipBoard, Ship
+from naval_battle.model.boards.guesses_board import GuessesBoard, GuessType
+from naval_battle.DTOs.ship_dto import ShipDTO
 from typing import Tuple
 
 

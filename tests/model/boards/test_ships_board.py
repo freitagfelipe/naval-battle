@@ -1,9 +1,9 @@
 import pytest
-from src.model.boards.ship_board import ShipBoard, InvalidShip, Ship
-from src.util.enums.ship_type import ShipType
-from src.model.position.position import Position
-from src.util.enums.cell_type import CellType
-from src.DTOs.ship_dto import ShipDTO
+from naval_battle.model.boards.ship_board import ShipBoard, InvalidShip, Ship
+from naval_battle.util.enums.ship_type import ShipType
+from naval_battle.model.position.position import Position
+from naval_battle.util.enums.cell_type import CellType
+from naval_battle.DTOs.ship_dto import ShipDTO
 
 
 def test_set_ship_should_fail_with_initial_x_outside_grid():

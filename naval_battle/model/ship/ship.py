@@ -1,6 +1,6 @@
-from src.DTOs.ship_dto import ShipDTO
-from src.model.position.position import Position
-from src.util.enums.ship_type import ShipType
+from naval_battle.DTOs.ship_dto import ShipDTO
+from naval_battle.model.position.position import Position
+from naval_battle.util.enums.ship_type import ShipType
 
 
 class ShipException(Exception):

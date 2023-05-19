@@ -1,4 +1,4 @@
-from src.util.enums.cell_type import CellType
+from naval_battle.util.enums.cell_type import CellType
 from typing import List
 from typing import TypeVar
 

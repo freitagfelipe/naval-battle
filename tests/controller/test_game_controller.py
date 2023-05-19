@@ -1,13 +1,13 @@
-from src.controller.game_controller import (
+from naval_battle.controller.game_controller import (
     GameController,
     Player,
     Position,
     GuessType,
     CurrentPlayer,
 )
-from src.DTOs.ship_dto import ShipDTO
-from src.model.boards.ship_board import ShipBoard
-from src.model.ship.ship import ShipType
+from naval_battle.DTOs.ship_dto import ShipDTO
+from naval_battle.model.boards.ship_board import ShipBoard
+from naval_battle.model.ship.ship import ShipType
 
 
 def test_alternate_player():
