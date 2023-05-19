@@ -17,7 +17,7 @@ class ShipBoard(Board):
         self.__ships = []
 
     @property
-    def ships(self) -> List:
+    def ships(self) -> List[Ship]:
         return self.__ships
 
     def set_ship(self, ship: Ship):
