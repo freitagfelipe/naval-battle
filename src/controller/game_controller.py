@@ -1,6 +1,6 @@
 from src.model.player.player import Player
 from src.model.position.position import Position
-from src.model.enums.current_player import CurrentPlayer
+from src.util.enums.current_player import CurrentPlayer
 from src.model.boards.guesses_board import GuessesBoard, GuessType
 from typing import Tuple
 

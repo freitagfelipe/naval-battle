@@ -1,5 +1,5 @@
 from src.model.position.position import Position
-from src.model.enums.ship_type import ShipType
+from src.util.enums.ship_type import ShipType
 
 
 class ShipException(Exception):

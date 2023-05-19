@@ -3,7 +3,7 @@ from src.model.player.player import Player
 from src.model.boards.ships_board import ShipBoard
 from src.model.boards.guesses_board import GuessesBoardException
 from src.model.position.position import Position
-from src.model.enums.ship_type import ShipType
+from src.util.enums.ship_type import ShipType
 from src.model.ship.ship import Ship
 
 

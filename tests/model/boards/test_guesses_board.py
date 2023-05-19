@@ -1,10 +1,10 @@
 import pytest
 from src.model.boards.guesses_board import GuessesBoard, GuessesBoardException
 from src.model.boards.ships_board import ShipBoard
-from src.model.enums.ship_type import ShipType
+from src.util.enums.ship_type import ShipType
 from src.model.position.position import Position
 from src.model.ship.ship import Ship
-from src.model.enums.guess_type import GuessType
+from src.util.enums.guess_type import GuessType
 
 
 def test_make_guess_should_pass():

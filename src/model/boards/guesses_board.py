@@ -2,8 +2,8 @@ from src.model.boards.board import Board
 from src.model.boards.ships_board import ShipBoard
 from src.model.ship.ship import Ship
 from src.model.position.position import Position
-from src.model.enums.cell_type import CellType
-from src.model.enums.guess_type import GuessType
+from src.util.enums.cell_type import CellType
+from src.util.enums.guess_type import GuessType
 from src.util.min_max_position import min_max_position
 import copy
 

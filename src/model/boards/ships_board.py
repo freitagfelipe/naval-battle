@@ -1,6 +1,6 @@
 from src.model.boards.board import Board
 from src.model.ship.ship import Ship
-from src.model.enums.cell_type import CellType
+from src.util.enums.cell_type import CellType
 from src.util.min_max_position import min_max_position
 from typing import List
 from typing import Tuple

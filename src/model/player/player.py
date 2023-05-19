@@ -1,7 +1,7 @@
 from src.model.boards.ships_board import ShipBoard
 from src.model.boards.guesses_board import GuessesBoard, GuessesBoardException
 from src.model.position.position import Position
-from src.model.enums.guess_type import GuessType
+from src.util.enums.guess_type import GuessType
 
 
 class Player:
