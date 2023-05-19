@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [scripts]
-start = "python3 src/__init__.py"
+start = "python3 main.py"
 test = "pytest --cov --cov-report=html:coverage_report"
 black = "black ."
 
