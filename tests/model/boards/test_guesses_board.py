@@ -5,12 +5,13 @@ from src.util.enums.ship_type import ShipType
 from src.model.position.position import Position
 from src.model.ship.ship import Ship
 from src.util.enums.guess_type import GuessType
+from src.DTOs.ship_dto import ShipDTO
 
 
 def test_make_guess_should_pass():
     ship_board = ShipBoard(10, 10)
 
-    ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
+    ship = Ship(ShipDTO(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2)))
 
     ship_board.set_ship(ship)
 
@@ -22,7 +23,7 @@ def test_make_guess_should_pass():
 def test_make_guess_that_destroy_ship():
     ship_board = ShipBoard(10, 10)
 
-    ship = Ship(ShipType.SUBMARINE, Position(0, 2), Position(0, 2))
+    ship = Ship(ShipDTO(ShipType.SUBMARINE, Position(0, 2), Position(0, 2)))
 
     ship_board.set_ship(ship)
 
@@ -37,7 +38,7 @@ def test_make_guess_same_position_hited_before_should_fail():
     ):
         ship_board = ShipBoard(10, 10)
 
-        ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
+        ship = Ship(ShipDTO(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2)))
 
         ship_board.set_ship(ship)
 
@@ -50,7 +51,7 @@ def test_make_guess_same_position_hited_before_should_fail():
 def test_make_guess_water_position_should_pass():
     ship_board = ShipBoard(10, 10)
 
-    ship = Ship(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2))
+    ship = Ship(ShipDTO(ShipType.SMALL_SHIP, Position(0, 2), Position(1, 2)))
 
     ship_board.set_ship(ship)
 

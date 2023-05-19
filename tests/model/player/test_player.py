@@ -5,6 +5,7 @@ from src.model.boards.guesses_board import GuessesBoardException, GuessesBoard
 from src.model.position.position import Position
 from src.util.enums.ship_type import ShipType
 from src.model.ship.ship import Ship
+from src.DTOs.ship_dto import ShipDTO
 
 
 def test_player_make_guess_in_water_should_pass():
@@ -21,7 +22,7 @@ def test_player_make_guess_same_position_hited_before_should_fail():
     ):
         enemy_ship_board = ShipBoard(10, 10)
         enemy_ship_board.set_ship(
-            Ship(ShipType.SUBMARINE, Position(5, 7), Position(5, 7))
+            Ship(ShipDTO(ShipType.SUBMARINE, Position(5, 7), Position(5, 7)))
         )
         guesses_board = GuessesBoard(enemy_ship_board)
 
@@ -33,7 +34,7 @@ def test_player_make_guess_same_position_hited_before_should_fail():
 
 def test_player_make_guess_in_ship_should_pass():
     enemy_ship_board = ShipBoard(10, 10)
-    enemy_ship_board.set_ship(Ship(ShipType.SUBMARINE, Position(5, 7), Position(5, 7)))
+    enemy_ship_board.set_ship(Ship(ShipDTO(ShipType.SUBMARINE, Position(5, 7), Position(5, 7))))
 
     player = Player("jogador", GuessesBoard(enemy_ship_board))
     old_score = player.score
