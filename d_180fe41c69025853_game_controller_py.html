@@ -54,8 +54,8 @@
             </div>
         </aside>
         <h2>
-            <span class="text">39 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">39<span class="text"> run</span></button>
+            <span class="text">43 statements &nbsp;</span>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">43<span class="text"> run</span></button>
             <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">0<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="d_de524a4cd0ce55f5___init___py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.2.5">coverage.py v7.2.5</a>,
-            created at 2023-05-19 23:58 +0000
+            created at 2023-05-20 02:53 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -96,7 +96,7 @@
     <p class="run"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">__player_two_ship_board</span> <span class="op">=</span> <span class="nam">ShipBoard</span><span class="op">(</span><span class="num">10</span><span class="op">,</span> <span class="num">10</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t16" href="#t16">16</a></span><span class="t">    <span class="key">def</span> <span class="nam">set_player_ship</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">player</span><span class="op">:</span> <span class="nam">CurrentPlayer</span><span class="op">,</span> <span class="nam">ship_dto</span><span class="op">:</span> <span class="nam">ShipDTO</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t">        <span class="nam">ship</span> <span class="op">=</span> <span class="nam">Ship</span><span class="op">(</span><span class="nam">ShipDTO</span><span class="op">(</span><span class="nam">ship_dto</span><span class="op">.</span><span class="nam">type</span><span class="op">,</span> <span class="nam">ship_dto</span><span class="op">.</span><span class="nam">initial_pos</span><span class="op">,</span> <span class="nam">ship_dto</span><span class="op">.</span><span class="nam">end_pos</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t">        <span class="nam">ship</span> <span class="op">=</span> <span class="nam">Ship</span><span class="op">(</span><span class="nam">ship_dto</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t18" href="#t18">18</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t19" href="#t19">19</a></span><span class="t">        <span class="key">if</span> <span class="nam">player</span> <span class="op">==</span> <span class="nam">CurrentPlayer</span><span class="op">.</span><span class="nam">PLAYER_ONE</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t20" href="#t20">20</a></span><span class="t">            <span class="nam">self</span><span class="op">.</span><span class="nam">__player_one_ship_board</span><span class="op">.</span><span class="nam">set_ship</span><span class="op">(</span><span class="nam">ship</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -139,6 +139,12 @@
     <p class="run"><span class="n"><a id="t57" href="#t57">57</a></span><span class="t">    <span class="op">@</span><span class="nam">property</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t58" href="#t58">58</a></span><span class="t">    <span class="key">def</span> <span class="nam">players_board</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span> <span class="op">-></span> <span class="nam">Tuple</span><span class="op">[</span><span class="nam">GuessesBoard</span><span class="op">,</span> <span class="nam">GuessesBoard</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t59" href="#t59">59</a></span><span class="t">        <span class="key">return</span> <span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">__player_one</span><span class="op">.</span><span class="nam">guesses_board</span><span class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__player_two</span><span class="op">.</span><span class="nam">guesses_board</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t60" href="#t60">60</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t61" href="#t61">61</a></span><span class="t">    <span class="key">def</span> <span class="nam">get_player_ship_board</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">player</span><span class="op">:</span> <span class="nam">CurrentPlayer</span><span class="op">)</span> <span class="op">-></span> <span class="nam">ShipBoard</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t62" href="#t62">62</a></span><span class="t">        <span class="key">if</span> <span class="nam">player</span> <span class="op">==</span> <span class="nam">CurrentPlayer</span><span class="op">.</span><span class="nam">PLAYER_ONE</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">            <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__player_one_ship_board</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">        <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__player_two_ship_board</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -148,7 +154,7 @@
             <a id="nextFileLink" class="nav" href="d_de524a4cd0ce55f5___init___py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.2.5">coverage.py v7.2.5</a>,
-            created at 2023-05-19 23:58 +0000
+            created at 2023-05-20 02:53 +0000
         </p>
     </div>
 </footer>
