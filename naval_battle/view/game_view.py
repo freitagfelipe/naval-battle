@@ -88,7 +88,7 @@ class GameView:
             # ShipType.MEDIUM_SHIP,
             # ShipType.MEDIUM_SHIP,
             # ShipType.BIG_SHIP,
-        ]   # Voltar todos os navios depois
+        ]  # Voltar todos os navios depois
 
         for ship in ships_to_read:
             self.__clear()
@@ -100,12 +100,17 @@ class GameView:
         input("Pressione enter para continuar...")
 
     def construct_players(self):
-        self.__game_controller.construct_players(self.__player_one_name, self.__player_two_name)
+        self.__game_controller.construct_players(
+            self.__player_one_name, self.__player_two_name
+        )
 
     def before_play(self):
         self.__clear()
 
-        print("O jogo irá começar, o primeiro a destruir todos os navios do oponente ganha", end="\n\n")
+        print(
+            "O jogo irá começar, o primeiro a destruir todos os navios do oponente ganha",
+            end="\n\n",
+        )
 
         input("Pressione enter para começar o jogo...")
 
@@ -114,17 +119,23 @@ class GameView:
 
     def make_guess(self):
         self.__clear()
-    
+
         guesses_board_one, guesses_board_two = self.__game_controller.players_board
 
-        current_board = guesses_board_one if self.__current_player_name == self.__player_one_name else guesses_board_two
+        current_board = (
+            guesses_board_one
+            if self.__current_player_name == self.__player_one_name
+            else guesses_board_two
+        )
 
         print(current_board, end="\n\n")
 
         print(f"Sua vez de tentar {self.__current_player_name}")
 
         while True:
-            position = self.__read_position_for_guess("Digite a coordenada para soltar uma bomba: ")
+            position = self.__read_position_for_guess(
+                "Digite a coordenada para soltar uma bomba: "
+            )
 
             try:
                 guess_type = self.__game_controller.compute_player_guess(position)
@@ -144,20 +155,27 @@ class GameView:
             input("Pressione enter para mudar de turno...")
 
     def some_winner(self) -> bool:
-        if self.__game_controller.current_player_score == 3: # MUDAR DEPOIS PRA 15
+        if self.__game_controller.current_player_score == 3:  # MUDAR DEPOIS PRA 15
             self.__winner = self.__current_player_name
 
         return self.__winner != None
 
     def alternate_player(self):
-        self.__current_player_name  = self.__game_controller.alternate_player()
+        self.__current_player_name = self.__game_controller.alternate_player()
 
     def show_winner(self):
         self.__clear()
 
-        loser_name = self.__player_two_name if self.__winner == self.__player_one_name else self.__player_one_name
+        loser_name = (
+            self.__player_two_name
+            if self.__winner == self.__player_one_name
+            else self.__player_one_name
+        )
 
-        print(f"{self.__winner} venceu!!!!! Não desista {loser_name}, talvez você ganhe a próxima", end="\n\n")
+        print(
+            f"{self.__winner} venceu!!!!! Não desista {loser_name}, talvez você ganhe a próxima",
+            end="\n\n",
+        )
 
         input("Pressione enter para continuar...")
 
@@ -220,7 +238,9 @@ class GameView:
                 print(f"Posição final digitada: {ship_end_position}")
                 self.__print_warning_message(error)
 
-    def __read_position_for_board(self, message_input: str, player: CurrentPlayer) -> Position:
+    def __read_position_for_board(
+        self, message_input: str, player: CurrentPlayer
+    ) -> Position:
         pattern = r"^\d+,\d+$"
         ship_position = ""
 
@@ -246,7 +266,11 @@ class GameView:
 
         guesses_board_one, guesses_board_two = self.__game_controller.players_board
 
-        current_board = guesses_board_one if self.__current_player_name == self.__player_one_name else guesses_board_two
+        current_board = (
+            guesses_board_one
+            if self.__current_player_name == self.__player_one_name
+            else guesses_board_two
+        )
 
         while True:
             guess_position = input(f"{message_input}")

@@ -45,7 +45,7 @@ while True:
         case GamePhase.PLAY_AGAIN:
             if game_view.play_again():
                 game_view.reset()
-            
+
                 game_phase = game_phase.READ_NAMES
             else:
                 game_phase = None

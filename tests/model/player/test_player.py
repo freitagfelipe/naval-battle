@@ -58,6 +58,7 @@ def test_name_getter():
 
     assert "jogador" == player.name
 
+
 def test_ships_bord_getter():
     player = Player("jogador", GuessesBoard(ShipBoard(2, 2)))
 
