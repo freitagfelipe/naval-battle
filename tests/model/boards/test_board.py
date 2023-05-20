@@ -37,6 +37,7 @@ def test_create_board_with_negative_column_should_fail():
     ):
         Board(2, -1)
 
+
 def test_create_board_with_more_than_ten_rows_should_fail():
     with pytest.raises(
         BoardException,
@@ -44,12 +45,14 @@ def test_create_board_with_more_than_ten_rows_should_fail():
     ):
         Board(11, 5)
 
+
 def test_create_board_with_more_than_ten_columns_should_fail():
     with pytest.raises(
         BoardException,
         match="O board não pode ser criado com um número maior que dez de colunas",
     ):
         Board(5, 11)
+
 
 def test_str_method():
     board = Board(1, 5)

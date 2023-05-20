@@ -92,10 +92,13 @@ def test_make_guess_with_y_outside_board_should_fail():
 
         guesses_board.make_guess(Position(1, -1))
 
+
 def test_str_method():
     ship_board = ShipBoard(1, 5)
 
-    ship_board.set_ship(Ship(ShipDTO(ShipType.SUBMARINE, Position(0, 0), Position(0, 0))))
+    ship_board.set_ship(
+        Ship(ShipDTO(ShipType.SUBMARINE, Position(0, 0), Position(0, 0)))
+    )
 
     guesses_board = GuessesBoard(ship_board)
 
