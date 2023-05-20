@@ -84,11 +84,11 @@ class GameView:
         ships_to_read = [
             ShipType.SUBMARINE,
             ShipType.SMALL_SHIP,
-            # ShipType.SMALL_SHIP,
-            # ShipType.MEDIUM_SHIP,
-            # ShipType.MEDIUM_SHIP,
-            # ShipType.BIG_SHIP,
-        ]  # Voltar todos os navios depois
+            ShipType.SMALL_SHIP,
+            ShipType.MEDIUM_SHIP,
+            ShipType.MEDIUM_SHIP,
+            ShipType.BIG_SHIP,
+        ]
 
         for ship in ships_to_read:
             self.__clear()
@@ -163,7 +163,7 @@ class GameView:
             input("Pressione enter para mudar de turno...")
 
     def some_winner(self) -> bool:
-        if self.__game_controller.current_player_score == 3:  # MUDAR DEPOIS PRA 15
+        if self.__game_controller.current_player_score == 15:
             self.__winner = self.__current_player_name
 
         return self.__winner != None
