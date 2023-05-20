@@ -8,7 +8,7 @@ from naval_battle.DTOs.ship_dto import ShipDTO
 
 def test_set_ship_should_fail_with_initial_x_outside_grid():
     with pytest.raises(
-        InvalidShip, match="O x da posição inicial está fora do tabuleiro"
+        InvalidShip, match="A linha da posição inicial está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -17,7 +17,7 @@ def test_set_ship_should_fail_with_initial_x_outside_grid():
         ship_board.set_ship(ship)
 
     with pytest.raises(
-        InvalidShip, match="O x da posição inicial está fora do tabuleiro"
+        InvalidShip, match="A linha da posição inicial está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -28,7 +28,7 @@ def test_set_ship_should_fail_with_initial_x_outside_grid():
 
 def test_set_ship_should_fail_with_end_x_outside_grid():
     with pytest.raises(
-        InvalidShip, match="O x da posição final está fora do tabuleiro"
+        InvalidShip, match="A linha da posição final está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -37,7 +37,7 @@ def test_set_ship_should_fail_with_end_x_outside_grid():
         ship_board.set_ship(ship)
 
     with pytest.raises(
-        InvalidShip, match="O x da posição final está fora do tabuleiro"
+        InvalidShip, match="A linha da posição final está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -48,7 +48,7 @@ def test_set_ship_should_fail_with_end_x_outside_grid():
 
 def test_set_ship_should_fail_with_initial_y_outside_grid():
     with pytest.raises(
-        InvalidShip, match="O y da posição inicial está fora do tabuleiro"
+        InvalidShip, match="A coluna da posição inicial está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -57,7 +57,7 @@ def test_set_ship_should_fail_with_initial_y_outside_grid():
         ship_board.set_ship(ship)
 
     with pytest.raises(
-        InvalidShip, match="O y da posição inicial está fora do tabuleiro"
+        InvalidShip, match="A coluna da posição inicial está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -68,7 +68,7 @@ def test_set_ship_should_fail_with_initial_y_outside_grid():
 
 def test_set_ship_should_fail_with_end_y_outside_grid():
     with pytest.raises(
-        InvalidShip, match="O y da posição final está fora do tabuleiro"
+        InvalidShip, match="A coluna da posição final está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
@@ -77,7 +77,7 @@ def test_set_ship_should_fail_with_end_y_outside_grid():
         ship_board.set_ship(ship)
 
     with pytest.raises(
-        InvalidShip, match="O y da posição final está fora do tabuleiro"
+        InvalidShip, match="A coluna da posição final está fora do tabuleiro"
     ):
         ship_board = ShipBoard(10, 10)
 
