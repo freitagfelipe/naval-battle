@@ -39,13 +39,13 @@ class ShipBoard(Board):
         ship_end_pos = ship.end_pos.get()
 
         if not (0 <= ship_initial_pos[0] < self.columns):
-            return (False, "O x da posição inicial está fora do tabuleiro")
+            return (False, "A linha da posição inicial está fora do tabuleiro")
         elif not (0 <= ship_end_pos[0] < self.columns):
-            return (False, "O x da posição final está fora do tabuleiro")
+            return (False, "A linha da posição final está fora do tabuleiro")
         elif not (0 <= ship_initial_pos[1] < self.rows):
-            return (False, "O y da posição inicial está fora do tabuleiro")
+            return (False, "A coluna da posição inicial está fora do tabuleiro")
         elif not (0 <= ship_end_pos[1] < self.rows):
-            return (False, "O y da posição final está fora do tabuleiro")
+            return (False, "A coluna da posição final está fora do tabuleiro")
 
         min_x = min(ship_initial_pos[0], ship_end_pos[0])
         max_x = max(ship_initial_pos[0], ship_end_pos[0])

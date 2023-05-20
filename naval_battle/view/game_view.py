@@ -42,7 +42,7 @@ class GameView:
             self.__clear()
 
             self.__print_warning_message(
-                "O nome só pode conter caracteres de a-z ou A-Z"
+                "O nome só pode conter caracteres de a-z ou A-Z, com tamanho de 1-15 caracteres"
             )
 
         self.__clear()
@@ -134,7 +134,7 @@ class GameView:
 
         while True:
             position = self.__read_position_for_guess(
-                "Digite a coordenada para soltar uma bomba: "
+                "Digite a posição, no formato 'linha,coluna', para soltar uma bomba: "
             )
 
             try:
@@ -205,11 +205,15 @@ class GameView:
 
     def reset(self):
         self.__game_controller = GameController()
+        self.__player_one_name = ""
+        self.__player_two_name = ""
+        self.__current_player_name = ""
+        self.__winner = None
 
     def __read_ship(self, player: CurrentPlayer, ship_type: ShipType):
-        submatine_message = "Digite a posição, no formato 'X,Y', do"
-        message_initial_pos = "Digite a posição inicial, no formato 'X,Y', do"
-        message_end_pos = "Digite a posição final, no formato 'X,Y', do"
+        submatine_message = "Digite a posição, no formato 'linha,coluna', do"
+        message_initial_pos = "Digite a posição inicial, no formato 'linha,coluna', do"
+        message_end_pos = "Digite a posição final, no formato 'linha,coluna', do"
 
         while True:
             if ship_type == ShipType.SUBMARINE:
@@ -264,7 +268,7 @@ class GameView:
                 "A posição só pode conter dígitos entre vírgulas (ex: 1,4)"
             )
 
-        y, x = ship_position.split(",")
+        x, y = ship_position.split(",")
 
         return Position(int(x), int(y))
 
@@ -292,7 +296,7 @@ class GameView:
                 "A posição só pode conter dígitos entre vírgulas (ex: 1,4)"
             )
 
-        y, x = guess_position.split(",")
+        x, y = guess_position.split(",")
 
         return Position(int(x), int(y))
 

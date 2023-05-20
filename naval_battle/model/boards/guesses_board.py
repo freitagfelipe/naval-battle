@@ -80,9 +80,9 @@ class GuessesBoard(Board):
         x, y = position.get()
 
         if not (0 <= x < self.rows):
-            raise GuessesBoardException("O x do palpite está fora do board")
+            raise GuessesBoardException("A linha do palpite está fora do board")
         elif not (0 <= y < self.columns):
-            raise GuessesBoardException("O y do palpite está fora do board")
+            raise GuessesBoardException("A coluna do palpite está fora do board")
         elif self.grid[x][y] == CellType.HIT or self.grid[x][y] == CellType.ERROR:
             raise GuessesBoardException("A posicão já foi escolhida anteriormente")
 
