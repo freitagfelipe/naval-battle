@@ -80,8 +80,29 @@ class GuessesBoard(Board):
         x, y = position.get()
 
         if not 0 <= x < self.rows:
-            raise GuessesBoardException("A linha do palpite está fora do board")
+            raise GuessesBoardException("O x do palpite está fora do board")
         elif not 0 <= y < self.columns:
-            raise GuessesBoardException("A coluna do palpite está fora do board")
+            raise GuessesBoardException("O y do palpite está fora do board")
         elif self.grid[x][y] == CellType.HIT or self.grid[x][y] == CellType.ERROR:
             raise GuessesBoardException("A posicão já foi escolhida anteriormente")
+
+    def __str__(self):
+        grid = self.grid
+        output = "   0️⃣  1️⃣  2️⃣  3️⃣  4️⃣  5️⃣  6️⃣  7️⃣  8️⃣  9️⃣"
+        numbers_emoji = [emoji for emoji in output.split(" ") if emoji != ""]
+
+        for i, row in enumerate(grid):
+            output += "\n"
+            output += numbers_emoji[i] + " "
+
+            for column in row:
+                if column == CellType.WATER:
+                    output += str(" 🟦")
+                elif column == CellType.SHIP:
+                    output += str(" 🟦")
+                elif column == CellType.ERROR:
+                    output += str(" 💣")
+                elif column == CellType.HIT:
+                    output += str(" 🚢")
+
+        return output
