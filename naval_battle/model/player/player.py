@@ -8,7 +8,6 @@ class Player:
         self.__name = name
         self.__guesses_board = guesses_board
         self.__score = 0
-        self.__round_score = 0
 
     @property
     def name(self) -> str:
@@ -19,15 +18,8 @@ class Player:
         return self.__score
 
     @property
-    def round_score(self) -> int:
-        return self.__round_score
-
-    @property
     def guesses_board(self) -> GuessesBoard:
         return self.__guesses_board
-
-    def set_round_score(self):
-        self.__round_score += 1
 
     def make_guess(self, position: Position) -> GuessType:
         try:
