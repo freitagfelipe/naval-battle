@@ -17,7 +17,7 @@ def test_create_submarine_should_fail_with_different_positions():
 
 
 def test_create_ship_should_fail_in_diagonal():
-    with pytest.raises(ShipException, match="Os submarinos não pode estar na diagonal"):
+    with pytest.raises(ShipException, match="O navio não pode estar na diagonal"):
         type = ShipType.SMALL_SHIP
         initial_pos = Position(10, 5)
         end_pos = Position(11, 6)
@@ -29,7 +29,7 @@ def test_create_ship_should_fail_in_diagonal():
 
 def test_create_small_ship_should_fail_with_wrong_size():
     with pytest.raises(
-        ShipException, match="O submarino pequeno deve ter dois de tamanho"
+        ShipException, match="O navio pequeno deve ter dois de tamanho"
     ):
         type = ShipType.SMALL_SHIP
         initial_pos = Position(10, 5)
@@ -40,7 +40,7 @@ def test_create_small_ship_should_fail_with_wrong_size():
         Ship(ship_dto)
 
     with pytest.raises(
-        ShipException, match="O submarino pequeno deve ter dois de tamanho"
+        ShipException, match="O navio pequeno deve ter dois de tamanho"
     ):
         type = ShipType.SMALL_SHIP
         initial_pos = Position(10, 5)
@@ -53,7 +53,7 @@ def test_create_small_ship_should_fail_with_wrong_size():
 
 def test_create_medium_ship_should_fail_with_wrong_size():
     with pytest.raises(
-        ShipException, match="O submarino médio deve ter três de tamanho"
+        ShipException, match="O navio médio deve ter três de tamanho"
     ):
         type = ShipType.MEDIUM_SHIP
         initial_pos = Position(10, 5)
@@ -64,7 +64,7 @@ def test_create_medium_ship_should_fail_with_wrong_size():
         Ship(ship_dto)
 
     with pytest.raises(
-        ShipException, match="O submarino médio deve ter três de tamanho"
+        ShipException, match="O navio médio deve ter três de tamanho"
     ):
         type = ShipType.MEDIUM_SHIP
         initial_pos = Position(10, 5)
@@ -77,7 +77,7 @@ def test_create_medium_ship_should_fail_with_wrong_size():
 
 def test_create_big_ship_should_fail_with_wrong_size():
     with pytest.raises(
-        ShipException, match="O submarino grande deve ter quatro de tamanho"
+        ShipException, match="O navio grande deve ter quatro de tamanho"
     ):
         type = ShipType.BIG_SHIP
         initial_pos = Position(10, 5)
@@ -88,7 +88,7 @@ def test_create_big_ship_should_fail_with_wrong_size():
         Ship(ship_dto)
 
     with pytest.raises(
-        ShipException, match="O submarino grande deve ter quatro de tamanho"
+        ShipException, match="O navio grande deve ter quatro de tamanho"
     ):
         type = ShipType.BIG_SHIP
         initial_pos = Position(10, 5)
