@@ -6,6 +6,7 @@ from naval_battle.model.position.position import Position
 from naval_battle.model.ship.ship import Ship
 from naval_battle.util.enums.guess_type import GuessType
 from naval_battle.DTOs.ship_dto import ShipDTO
+from naval_battle.util.enums.cell_type import CellType
 
 
 def test_make_guess_should_pass():
@@ -90,3 +91,18 @@ def test_make_guess_with_y_outside_board_should_fail():
         guesses_board = GuessesBoard(ShipBoard(10, 10))
 
         guesses_board.make_guess(Position(1, -1))
+
+def test_str_method():
+    ship_board = ShipBoard(1, 5)
+
+    ship_board.set_ship(Ship(ShipDTO(ShipType.SUBMARINE, Position(0, 0), Position(0, 0))))
+
+    guesses_board = GuessesBoard(ship_board)
+
+    guesses_board.grid[0][1] = CellType.HIT
+    guesses_board.grid[0][3] = CellType.ERROR
+
+    line_one, line_two = str(guesses_board).split("\n")
+
+    assert line_one == "   0️⃣  1️⃣  2️⃣  3️⃣  4️⃣"
+    assert line_two == "0️⃣  🟦 🚢 🟦 💣 🟦"
