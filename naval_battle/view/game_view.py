@@ -140,6 +140,10 @@ class GameView:
             try:
                 guess_type = self.__game_controller.compute_player_guess(position)
 
+                self.__clear()
+
+                print(current_board, end="\n\n")
+
                 if guess_type == GuessType.ERROR:
                     print("Errou", end="\n\n")
                 elif guess_type == GuessType.HIT:
@@ -149,7 +153,11 @@ class GameView:
 
                 break
             except GuessesBoardException as error:
-                print(error)
+                self.__clear()
+
+                print(current_board, end="\n\n")
+
+                self.__print_warning_message(error)
 
         if not self.some_winner():
             input("Pressione enter para mudar de turno...")
