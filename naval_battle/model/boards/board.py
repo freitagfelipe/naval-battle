@@ -20,6 +20,15 @@ class Board:
             raise BoardException(
                 "O board não pode ser criado com um número negativo de colunas"
             )
+        elif rows > 10:
+            raise BoardException(
+                "O board não pode ser criado com um número maior que dez de linhas"
+            )
+        elif columns > 10:
+            raise BoardException(
+                "O board não pode ser criado com um número maior que dez de colunas"
+            )
+
         self.__rows = rows
         self.__columns = columns
         self.__grid = [[CellType.WATER for _ in range(columns)] for _ in range(rows)]
@@ -45,8 +54,8 @@ class Board:
 
     def __str__(self) -> str:
         grid = self.grid
-        output = "   0️⃣  1️⃣  2️⃣  3️⃣  4️⃣  5️⃣  6️⃣  7️⃣  8️⃣  9️⃣"
-        numbers_emoji = [emoji for emoji in output.split(" ") if emoji != ""]
+        numbers_emoji = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"]
+        output = f"   {'  '.join(numbers_emoji[i] for i in range(self.__columns))}"
 
         for i, row in enumerate(grid):
             output += "\n"
@@ -55,10 +64,6 @@ class Board:
             for column in row:
                 if column == CellType.WATER:
                     output += str(" 🟦")
-                elif column == CellType.SHIP:
-                    output += str(" 🚢")
-                elif column == CellType.ERROR:
-                    output += str(" 💣")
                 elif column == CellType.SHIP:
                     output += str(" 🚢")
 
