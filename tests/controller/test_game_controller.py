@@ -79,8 +79,13 @@ def test_get_players_board():
     assert player_one_board == ShipBoard(10, 10)
     assert player_two_board == ShipBoard(10, 10)
 
+
 def test_get_player_ship_board():
     game_controller = GameController()
-    
-    assert game_controller.get_player_ship_board(CurrentPlayer.PLAYER_ONE) == game_controller.__getattribute__("_GameController__player_one_ship_board")
-    assert game_controller.get_player_ship_board(CurrentPlayer.PLAYER_TWO) == game_controller.__getattribute__("_GameController__player_two_ship_board")
+
+    assert game_controller.get_player_ship_board(
+        CurrentPlayer.PLAYER_ONE
+    ) == game_controller.__getattribute__("_GameController__player_one_ship_board")
+    assert game_controller.get_player_ship_board(
+        CurrentPlayer.PLAYER_TWO
+    ) == game_controller.__getattribute__("_GameController__player_two_ship_board")

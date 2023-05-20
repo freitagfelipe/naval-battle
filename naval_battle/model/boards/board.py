@@ -42,16 +42,16 @@ class Board:
 
     def __eq__(self, other: Self) -> bool:
         return self.grid == other.grid
-    
-    def __str__(self) -> str:       
+
+    def __str__(self) -> str:
         grid = self.grid
         output = "   0️⃣  1️⃣  2️⃣  3️⃣  4️⃣  5️⃣  6️⃣  7️⃣  8️⃣  9️⃣"
         numbers_emoji = [emoji for emoji in output.split(" ") if emoji != ""]
-        
-        for i,row in enumerate(grid):
+
+        for i, row in enumerate(grid):
             output += "\n"
             output += numbers_emoji[i] + " "
-            
+
             for column in row:
                 if column == CellType.WATER:
                     output += str(" 🟦")
@@ -61,5 +61,5 @@ class Board:
                     output += str(" 💣")
                 elif column == CellType.SHIP:
                     output += str(" 🚢")
-            
+
         return output

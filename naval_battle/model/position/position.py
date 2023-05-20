@@ -14,6 +14,6 @@ class Position:
 
     def __eq__(self, other: Self) -> bool:
         return self.__x == other.__x and self.__y == other.__y
-    
+
     def __str__(self) -> str:
         return f"{self.__x},{self.__y}"

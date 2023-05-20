@@ -31,6 +31,7 @@ def test_different_positions_equality():
     position_two = Position(x_two, y_two)
 
     assert position_one != position_two
-    
+
+
 def test_print_position():
-    assert "1,1" == str(Position(1,1))
+    assert "1,1" == str(Position(1, 1))

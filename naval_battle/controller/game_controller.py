@@ -57,9 +57,9 @@ class GameController:
     @property
     def players_board(self) -> Tuple[GuessesBoard, GuessesBoard]:
         return (self.__player_one.guesses_board, self.__player_two.guesses_board)
-    
+
     def get_player_ship_board(self, player: CurrentPlayer) -> ShipBoard:
         if player == CurrentPlayer.PLAYER_ONE:
             return self.__player_one_ship_board
-        
+
         return self.__player_two_ship_board
