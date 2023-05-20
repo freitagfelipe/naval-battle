@@ -14,7 +14,7 @@ class GameController:
         self.__player_two_ship_board = ShipBoard(10, 10)
 
     def set_player_ship(self, player: CurrentPlayer, ship_dto: ShipDTO):
-        ship = Ship(ShipDTO(ship_dto.type, ship_dto.initial_pos, ship_dto.end_pos))
+        ship = Ship(ship_dto)
 
         if player == CurrentPlayer.PLAYER_ONE:
             self.__player_one_ship_board.set_ship(ship)
@@ -57,3 +57,9 @@ class GameController:
     @property
     def players_board(self) -> Tuple[GuessesBoard, GuessesBoard]:
         return (self.__player_one.guesses_board, self.__player_two.guesses_board)
+    
+    def get_player_ship_board(self, player: CurrentPlayer) -> ShipBoard:
+        if player == CurrentPlayer.PLAYER_ONE:
+            return self.__player_one_ship_board
+        
+        return self.__player_two_ship_board
