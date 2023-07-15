@@ -57,7 +57,7 @@ class GameView:
             self.__clear()
 
             self.__print_warning_message(
-                "O nome só pode conter caracteres de a-z ou A-Z"
+                "O nome só pode conter caracteres de a-z ou A-Z, com tamanho de 1-15 caracteres"
             )
 
     def before_reading_player_ships(self, player: CurrentPlayer):
