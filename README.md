@@ -1,6 +1,6 @@
 # Naval battle
 
-- Esse projeto foi desenvolvido para a disciplina de verificação e validação e tem como objetivo praticar o que foi aprendido sobre Test Driven Development e Behavior Driven Development.
+- Esse projeto foi desenvolvido para a disciplina de Verificação e Validação e tem como objetivo praticar o que foi aprendido sobre Test Driven Development e Behavior Driven Development.
 
 ## Como foi feito
 
